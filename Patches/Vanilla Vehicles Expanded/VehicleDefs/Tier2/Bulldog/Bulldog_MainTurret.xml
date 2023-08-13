@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+			<li>Vanilla Vehicles Expanded</li>
+		</mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/Vehicles.VehicleTurretDef[defName="Roadkill_MainTurret"]/projectile</xpath>
+					<value>
+						<projectile>Bullet_762x385mmRCannonShell</projectile>
+					</value>
+                </li>
+				<!-- generic ammo не работает -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Roadkill_MainTurret"]/genericAmmo</xpath>
+					<value>
+						<genericAmmo>true</genericAmmo>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/Vehicles.VehicleTurretDef[defName="Roadkill_MainTurret"]/ammunition/thingDefs</xpath>
+					<value>
+						<thingDefs>
+							<li>Ammo_762x385mmRCannonShell</li>
+							<li>Ammo_762x385mmRCannonShell_HE</li>
+							<li>Ammo_762x385mmRCannonShell_EMP</li>
+						</thingDefs>
+					</value>
+				</li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>
